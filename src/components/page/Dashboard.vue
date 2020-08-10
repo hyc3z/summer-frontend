@@ -1,8 +1,8 @@
 <template>
     <div>
-        <el-row :gutter="20">
+        <el-row :gutter="20" >
             <el-col :span="8" >
-                <el-card>
+                <el-card style="margin-bottom: 20px">
                         <div class="el-page-header__title" style="width: 100%; height: 200%; text-align: center; margin-bottom: 20px">
                             <h2>角色基础信息<br/></h2>
                         </div>
@@ -63,10 +63,10 @@
 
 
                                 <el-form-item label="性格">
-                                    <el-input type="textarea" rows="1" v-model="form.personality"></el-input>
+                                    <el-input v-model="form.personality" style="width: 100%;"></el-input>
                                 </el-form-item>
                                 <el-form-item label="种族特性">
-                                    <el-input type="textarea" rows="1" v-model="form.racespec"></el-input>
+                                    <el-input v-model="form.racespec"  type="textarea" rows="3" style="width: 100%;"></el-input>
                                 </el-form-item>
                                 <el-form-item label="从属角色">
                                     <el-input v-model="form.role"  style="width: 100%;"></el-input>
@@ -98,7 +98,7 @@
             <el-col :span="16">
 
 
-                <el-card shadow="hover" style="height:767px;">
+                <el-card shadow="hover" style="height:825px;">
                     <div class="el-page-header__title" style="width: 100%; height: 200%; text-align: center; margin-bottom: 20px">
                             <h2>角色技能<br/></h2>
                         </div>
@@ -146,46 +146,46 @@ export default {
         return {
             name: localStorage.getItem('ms_username'),
             form: {
-                name: '小霸王',
+                name: '水野权藏',
                 sex: '男',
-                race: '法师',
-                height: 162,
-                weight: 200,
-                belief: '伊斯兰教',
+                race: '鲸天狗',
+                height: 184,
+                weight: 78,
+                belief: '大神教',
                 age: 18,
-                faith: '66',
+                faith: '中等',
                 hand: '右',
-                personality: '霸气',
-                racespec: '坚韧，无畏',
+                personality: '较易冲动、自信、直率',
+                racespec: '允许在水下活动无惩罚，拥有特殊的种族专属“赐福系”魔法',
                 role: 'xxx',
-                roleintro: '我是一个没有感情的杀戮机器',
+                roleintro: '出生于天狗国外圈的平凡家族的鲸天狗，成年之后子承父业，接下了他爹御海行者的职位，守护着天狗国领海的安全。',
             },
             tableData:[{
                         "skillname": "防御",
                         "level": 0,
-                        "current-exp": 10,
-                        "exp-to-next-level": 90,
+                        "current-exp": 0,
+                        "exp-to-next-level": 6,
                     },
                     {
                         "skillname": "搬运",
                         "level": 0,
-                        "current-exp": 10,
-                        "exp-to-next-level": 90,
+                        "current-exp": 0,
+                        "exp-to-next-level": 6,
                     },
                     {
                         "skillname": "恐吓",
                         "level": 0,
-                        "current-exp": 10,
-                        "exp-to-next-level": 90,
+                        "current-exp": 0,
+                        "exp-to-next-level": 6,
                     },
                     {
                         "skillname": "讲价",
                         "level": 0,
-                        "current-exp": 10,
-                        "exp-to-next-level": 90,
+                        "current-exp": 0,
+                        "exp-to-next-level": 6,
                     },
                 ],
-            "pageTotal": 4
+            "pageTotal": 6
         };
     },
     components: {
@@ -214,7 +214,7 @@ export default {
                 const date = new Date(now - (6 - index) * 86400000);
                 item.name = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
             });
-        }
+        },
         // handleListener() {
         //     bus.$on('collapse', this.handleBus);
         //     // 调用renderChart方法对图表进行重新渲染
@@ -229,6 +229,9 @@ export default {
         //     this.$refs.bar.renderChart();
         //     this.$refs.line.renderChart();
         // }
+        onSubmit() {
+            this.$message.success('提交成功！');
+        }
     }
 };
 </script>

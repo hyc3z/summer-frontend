@@ -33,6 +33,9 @@ a {
     background: #f0f0f0;
 }
 
+.el-textarea .el-textarea__inner{
+  resize: none;
+}
 .content {
     width: auto;
     height: 100%;
