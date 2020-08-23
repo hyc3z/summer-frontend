@@ -7,7 +7,7 @@
                             <h2>角色基础信息<br/></h2>
                         </div>
                         <div class="form-box" >
-                            <el-form ref="form" :model="form" label-width="80px" style="width: 70%;">
+                            <el-form ref="form" :model="form" label-width="80px" style="width: 60%;">
                                          <el-form-item label="姓名" >
                                             <el-input v-model="form.name"  style="width: 100%;"></el-input>
                                         </el-form-item>
@@ -83,7 +83,7 @@
                             <h2>角色简介<br/></h2>
                         </div>
                         <div class="form-box" >
-                            <el-form ref="form" :model="form" label-width="80px" style="width: 70%;">
+                            <el-form ref="form" :model="form"  style="width: 60%;">
                                 <el-form-item label="">
                                     <el-input type="textarea" rows="3" v-model="form.roleintro"></el-input>
                                 </el-form-item>
